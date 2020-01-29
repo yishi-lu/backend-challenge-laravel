@@ -6,6 +6,13 @@ use Closure;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Auth\Middleware\Authenticate as Middleware;
 
+/**
+ * AddAuthHeaderToken, fetch cookie token and attach to request header
+ *
+ * Created by Yishi Lu.
+ * User: Yishi Lu
+ * Date: 2020/01/27
+ */
 class AddAuthHeaderToken extends Middleware
 {
 
