@@ -60,41 +60,41 @@ class EtfsServiceImp implements EtfsService{
         $result['fund_top_holding'] = $etfSymbol
                                     ->topHolding()
                                     ->where('type', '=', 'fund')
-                                    ->whereDate('created_at', Carbon::today())
+                                    ->whereDate('updated_at', Carbon::today())
                                     ->get();
 
         $result['fund_top_holding'] = $etfSymbol
                         ->topHolding()
                         ->where('type', '=', 'fund')
-                        ->whereDate('created_at', Carbon::today())
+                        ->whereDate('updated_at', Carbon::today())
                         ->get();
 
         $result['index_top_holding'] = $etfSymbol
                         ->topHolding()
                         ->where('type', '=', 'index')
-                        ->whereDate('created_at', Carbon::today())
+                        ->whereDate('updated_at', Carbon::today())
                         ->get();
 
         $result['fund_sector_weight'] = $etfSymbol
                         ->sectorWeight()
                         ->where('type', '=', 'fund')
-                        ->whereDate('created_at', Carbon::today())
+                        ->whereDate('updated_at', Carbon::today())
                         ->get();
 
         $result['index_sector_weight'] = $etfSymbol
                         ->sectorWeight()
                         ->where('type', '=', 'index')
-                        ->whereDate('created_at', Carbon::today())
+                        ->whereDate('updated_at', Carbon::today())
                         ->get();
 
         $result['country_weight'] = $etfSymbol
                         ->countryWeight()
-                        ->whereDate('created_at', Carbon::today())
+                        ->whereDate('updated_at', Carbon::today())
                         ->get();
 
         $result['etf_info'] = $etfSymbol
                         ->etfInfo()
-                        ->whereDate('created_at', Carbon::today())
+                        ->whereDate('updated_at', Carbon::today())
                         ->get();
         
         return $result;
