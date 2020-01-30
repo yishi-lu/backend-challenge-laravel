@@ -138,6 +138,7 @@ class EtfsServiceImp implements EtfsService{
                 $etfSymbol->aum = $aum;
                 $etfSymbol->asOfDate = $asOfDate;
                 $etfSymbol->fundFilter = $fundFilter;
+                $etfSymbol->updated_at = Carbon::now();
 
                 $etfSymbol->save();
             }
@@ -270,6 +271,7 @@ class EtfsServiceImp implements EtfsService{
             ]);
         }
         else {
+
             $etfSymbolInfo->key_feature = $etfSymbolInfo->id;
             $etfSymbolInfo->about = $result['eft_info']['about'] ?? null;
             $etfSymbolInfo->primary_benchmark = $primaryBenchmark ?? null;
@@ -292,6 +294,7 @@ class EtfsServiceImp implements EtfsService{
             $etfSymbolInfo->trading_currency = $result['eft_info']['listing_info']['Trading Currency'] ?? null;
             $etfSymbolInfo->CUSIP = $result['eft_info']['listing_info']['CUSIP'] ?? null;
             $etfSymbolInfo->ISIN = $result['eft_info']['listing_info']['ISIN'] ?? null;
+            $etfSymbolInfo->updated_at = Carbon::now();
 
             $etfSymbolInfo->save();
         }
