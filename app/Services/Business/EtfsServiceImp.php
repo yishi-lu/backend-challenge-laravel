@@ -58,12 +58,6 @@ class EtfsServiceImp implements EtfsService{
         if($etfSymbol == null) return null;
 
         $result['fund_top_holding'] = $etfSymbol
-                                    ->topHolding()
-                                    ->where('type', '=', 'fund')
-                                    ->whereDate('updated_at', Carbon::today())
-                                    ->get();
-
-        $result['fund_top_holding'] = $etfSymbol
                         ->topHolding()
                         ->where('type', '=', 'fund')
                         ->whereDate('updated_at', Carbon::today())
